@@ -1,0 +1,24 @@
+﻿@using eTicaretMVC.Models
+@model  IEnumerable<Category>
+
+
+
+
+
+<ul class="list-group">
+    <li class="list-group-item">
+        <a href="/Home/List">
+            Tüm Kategoriler
+        </a>
+    </li>
+    @foreach (var i in Model)
+    {
+        <li class="list-group-item">
+            <a href="/Home/List/@i.Id">
+                <i class="fas fa-angle-double-right"></i>
+                @i.Name
+            </a>
+        </li>
+
+    }
+</ul>

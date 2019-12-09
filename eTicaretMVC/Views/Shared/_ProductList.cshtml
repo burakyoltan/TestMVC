@@ -1,0 +1,48 @@
+﻿@using eTicaretMVC.Models
+@model IEnumerable<Product>
+
+
+<div class="row ">
+    @foreach (var urun in Model)
+    {
+        
+        <div class="col-md-4">
+
+            <div class="card mb-4">
+                <div class='section content'>
+                    <div class='illustration'>
+                        <img src="/Upload/@urun.Image" style='max-width: 300px' height='300px'/>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="/Home/Details/@urun.Id">@urun.Name</a>
+                    </h5>
+                    <p class="card-text pt-1 description">
+                        @if (urun.Description.Length > 40)
+                        {
+                            @(urun.Description.Substring(0, 40) + "...");
+
+                        }
+                        else
+                        {
+                            @urun.Description
+                        }
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <strong class="product-price">
+                        <i class="fas fa-lira-sign"></i>
+                        @urun.Price
+                    </strong>
+                    <a href="/Home/Details/@urun.Id" class="btn btn-outline-primary btn-sm float-right ">
+                        <i class="fas fa-angle-double-right"></i>
+
+                        Ürünü İncele
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>

@@ -1,0 +1,49 @@
+.jumbotron{
+    background: url("../img/shutterstock_520783261.jpg")  center ;
+    background-size: cover;
+    height: 500px;
+}
+
+#write-review{
+    margin-left:-25px;
+}
+#product-price{
+    font-size:28px;
+    color: red;
+}
+
+
+  code {
+    font-size: 80%;
+  }
+ .box {
+     width: 250px !important;
+     height: 300px !important;
+
+ }
+ .card-title {
+     font-size: 20px;
+     font-weight: 400;
+     color: #484848;
+     line-height: 1.35rem;
+     height: 50px;
+     margin-top: 5px;
+     margin-left: 2px;
+ }
+ .description {
+     font-size: 15px;
+     height: 50px;
+ }
+product-price {
+    text-align: left;
+    display: inline-block!important;
+    font-size: 18px!important;
+    font-weight: 600;
+}
+.illustration img {
+    width: 100%;
+    display: block;
+}
+.content {
+    max-width: 350px;
+}

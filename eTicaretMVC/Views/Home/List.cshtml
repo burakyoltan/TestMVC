@@ -1,0 +1,28 @@
+﻿@using eTicaretMVC.Models
+@model IEnumerable<Product>
+
+<div class="container  mt-5">
+    <div class="row">
+        <div class="col-md-3">
+            @Html.Action("GetCategories","Home")
+        </div>
+        <div class="col-md-9">
+            @if (!Model.Any())
+            {
+                <div class="alert alert-danger" role="alert">
+                    <i class="fas fa-times"></i>
+                    Bu kategoriye ait ürün bulunamadı
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-info" role="alert">
+                    <i class="fas fa-check-circle"></i>
+                    @Model.Count() adet ürün bulundu
+                </div>
+            }
+
+            @Html.Partial("_ProductList", Model)
+        </div>
+    </div>
+</div>
