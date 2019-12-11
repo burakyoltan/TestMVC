@@ -18,7 +18,7 @@ namespace eTicaretMVC.Models
         [DisplayName("Kategori Adı")]
         [StringLength(30, ErrorMessage = "3-20 karakter uzunluğunda olmalıdır", MinimumLength = 3)]
 
-    public string Name { get; set; }
+        public string Name { get; set; }
 
         [DisplayName("Açıklama")]
         public string Description { get; set; }

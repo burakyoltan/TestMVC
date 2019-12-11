@@ -1,0 +1,13 @@
+﻿@model eTicaretMVC.Models.Card
+
+<style>
+    #card {
+        color: white!important;
+    }
+</style>
+<ul class="navbar-nav my-2 my-lg-0">
+    <li id="card"  class="nav-item">
+        <i class="fa fa-cart-plus"></i>
+        (@Model.CardLines.Count)
+    </li>
+</ul>

@@ -10,6 +10,8 @@ using eTicaretMVC.Models;
 
 namespace eTicaretMVC.Controllers
 {
+
+    [Authorize(Roles = "admin")]
     public class CategoryController : Controller
     {
         private DataContext db = new DataContext();

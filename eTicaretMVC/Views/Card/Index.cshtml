@@ -1,0 +1,81 @@
+﻿@model  eTicaretMVC.Models.Card
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Alışveriş Sepeti</h2>
+            <hr />
+            
+            @if (Model.CardLines.Count > 0) { 
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Quantity</th>
+                    <th>Prodct Name</th>
+                    <th>Price</th>
+                    <th>Sub Total</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach(var item in Model.CardLines)
+                {
+                    <tr>
+                        <td>
+                            <img src="/Upload/@item.Product.Image" alt="Alternate Text" width="50px" />
+                        </td>
+                        <td>
+                            @item.Quantity
+                        </td>
+                        <td>
+                            @item.Product.Name
+                        </td>
+                        <td>
+                            @item.Product.Price
+                        </td>
+                        <td>
+                            @((item.Product.Price * item.Quantity).ToString("c"))
+                        </td>
+                        <td>
+                            @using (Html.BeginForm("RemovoFromCard", "Card"))
+                            {
+                                @Html.Hidden("Id", item.Product.Id)
+                                <button type="submit" class="btn btn-outline-danger">
+                                    Çıkar
+                                </button>
+                            }
+
+                        </td>
+                    </tr>
+                }
+                <tbody>
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5"></td>
+                        <td>@Model.Total().ToString("c")</td>
+                    </tr>
+                </tfoot>
+
+            </table>
+            }
+
+            else
+            {
+                <div class="alert alert-dark" role="alert">
+                    Sepetiniz Boş
+                    </div>
+            }
+
+
+
+
+
+
+        </div>
+    </div>
+</div>

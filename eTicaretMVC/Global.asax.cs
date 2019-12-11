@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using eTicaretMVC.Identity;
+using eTicaretMVC.Models;
 
 namespace eTicaretMVC
 {
@@ -13,6 +16,9 @@ namespace eTicaretMVC
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            Database.SetInitializer(new DataInitializer());
+            Database.SetInitializer(new IdentityInitializer());
+
         }
     }
 }
